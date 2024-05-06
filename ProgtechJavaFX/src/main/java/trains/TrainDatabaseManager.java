@@ -32,6 +32,32 @@ public class TrainDatabaseManager {
         }
     }
 
+    public static void updateToDatabase(int id, String model, int averageSpeed, int safetyLevel, int numberOfWagons){
+        Connection connection = null;
+        try {
+            connection = ConnectToDB.connect();
+            String query = "UPDATE trains SET model = ?, average_speed = ?, " +
+                    "safety_level = ?, number_of_wagons = ? WHERE id = ?";
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.setString(1, model);
+            statement.setInt(2, averageSpeed);
+            statement.setInt(3, safetyLevel);
+            statement.setInt(4, numberOfWagons);
+            statement.setInt(5, id);
+            statement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
     public static String[] loadFromDatabase(int id){
         Connection connection = null;
         try {

@@ -26,4 +26,9 @@ public abstract class TrainDecoratorBase extends TrainBase {
     public int GetNumberOfWagons() {
         return train.GetNumberOfWagons();
     }
+
+    @Override
+    public String toString() {
+        return train.toString();
+    }
 }
