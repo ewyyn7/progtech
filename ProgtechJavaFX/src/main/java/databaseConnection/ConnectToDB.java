@@ -1,6 +1,8 @@
 package databaseConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConnectToDB {
@@ -24,6 +26,16 @@ public class ConnectToDB {
             } catch (SQLException e) {
                 System.err.println("Error while closing the connection: " + e.getMessage());
             }
+        }
+    }
+
+    public static ResultSet executeQuery(Connection connection, String query) {
+        try {
+            PreparedStatement statement = connection.prepareStatement(query);
+            return statement.executeQuery();
+        } catch (SQLException e) {
+            System.err.println("Error executing query: " + e.getMessage());
+            return null;
         }
     }
 }
