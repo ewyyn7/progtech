@@ -92,4 +92,15 @@ public class ShuttleTrain extends TrainBase {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "ShuttleTrain{" +
+                "id=" + id +
+                ", model='" + model + '\'' +
+                ", averageSpeed=" + averageSpeed +
+                ", safetyLevel=" + safetyLevel +
+                ", numberOfWagons=" + numberOfWagons +
+                '}';
+    }
 }

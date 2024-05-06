@@ -6,19 +6,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import databaseConnection.ConnectToDB;
+import trains.ShuttleTrain;
+
 public class Tester {
     public static void main(String[] args) {
         Connection connection = ConnectToDB.connect();
         if (connection != null) {
             try {
-                String query = "SELECT * FROM trains";
-                ResultSet resultSet = ConnectToDB.executeQuery(connection, query);
 
-                while (resultSet.next()) {
-                    int id = resultSet.getInt("id");
-                    System.out.println("ID: " + id);
-                }
-            } catch (SQLException e) {
+                ShuttleTrain shuttleTrain = new ShuttleTrain();
+                //shuttleTrain.saveToDatabase();
+                shuttleTrain.loadFromDatabase(3);
+                System.out.println(shuttleTrain);
+
+            } catch (Exception e) {
                 e.printStackTrace();
             } finally {
                 ConnectToDB.close(connection);
