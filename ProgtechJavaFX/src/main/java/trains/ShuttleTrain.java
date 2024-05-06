@@ -41,56 +41,19 @@ public class ShuttleTrain extends TrainBase {
 
     @Override
     public void saveToDatabase() {
-        Connection connection = null;
-        try {
-            connection = ConnectToDB.connect();
-            String query = "INSERT INTO trains (model, average_speed, safety_level, number_of_wagons) VALUES (?, ?, ?, ?)";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setString(1, model);
-            statement.setInt(2, averageSpeed);
-            statement.setInt(3, safetyLevel);
-            statement.setInt(4, numberOfWagons);
-            statement.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
+        TrainDatabaseManager.saveToDatabase(model, averageSpeed, safetyLevel, numberOfWagons);
     }
 
     @Override
     public void loadFromDatabase(int id) {
-        Connection connection = null;
-        try {
-            connection = ConnectToDB.connect();
-            String query = "SELECT * FROM trains WHERE id = ?";
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.setInt(1, id);
-            ResultSet resultSet = statement.executeQuery();
-            if (resultSet.next()) {
+            String[] result = TrainDatabaseManager.loadFromDatabase(id);
+            if (result != null) {
                 this.id = id;
-                this.model = resultSet.getString("model");
-                this.averageSpeed = resultSet.getInt("average_speed");
-                this.safetyLevel = resultSet.getInt("safety_level");
-                this.numberOfWagons = resultSet.getInt("number_of_wagons");
+                this.model = result[0];
+                this.averageSpeed = Integer.parseInt(result[1]);
+                this.safetyLevel = Integer.parseInt(result[2]);
+                this.numberOfWagons = Integer.parseInt(result[3]);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (connection != null) {
-                    connection.close();
-                }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 
     @Override
