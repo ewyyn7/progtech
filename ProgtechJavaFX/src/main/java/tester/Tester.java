@@ -21,7 +21,7 @@ public class Tester {
             } catch (SQLException e) {
                 e.printStackTrace();
             } finally {
-                ConnectToDB.close(connection); // Close connection
+                ConnectToDB.close(connection);
             }
         }
     }
