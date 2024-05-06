@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import databaseConnection.ConnectToDB;
+import trains.EquipDiningCar;
 import trains.EquipSnowplough;
 import trains.ShuttleTrain;
 
@@ -23,6 +24,10 @@ public class Tester {
                 shuttleTrain.loadFromDatabase(3);
                 System.out.println(shuttleTrain);
                 System.out.println(equipSnowplough);
+                EquipDiningCar equipDiningCar = new EquipDiningCar(shuttleTrain);
+                equipDiningCar.saveToDatabase();
+                shuttleTrain.loadFromDatabase(3);
+                System.out.println(shuttleTrain);
 
             } catch (Exception e) {
                 e.printStackTrace();
