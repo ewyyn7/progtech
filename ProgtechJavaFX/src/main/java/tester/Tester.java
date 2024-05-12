@@ -1,17 +1,31 @@
 package tester;
-import java.sql.Connection;
+/*import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.SQLException;*/
 
 import databaseConnection.ConnectToDB;
 import trains.EquipDiningCar;
 import trains.EquipSnowplough;
 import trains.ShuttleTrain;
 
+
+import train_lines.*;
+
+
+
+
 public class Tester {
     public static void main(String[] args) {
+
+        Line line = new Line("123");
+        line.RegisterObserver(new Maintenance("1"));
+        line.RegisterObserver(new Monitoring("2"));
+
+        line.Check();
+
+        /*
         Connection connection = ConnectToDB.connect();
         if (connection != null) {
             try {
@@ -34,6 +48,6 @@ public class Tester {
             } finally {
                 ConnectToDB.close(connection);
             }
-        }
+        }*/
     }
 }
