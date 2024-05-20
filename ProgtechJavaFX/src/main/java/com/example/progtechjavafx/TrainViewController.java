@@ -2,11 +2,10 @@ package com.example.progtechjavafx;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import trains.TrainBase;
 import trains.TrainDatabaseManager;
@@ -35,6 +34,15 @@ public class TrainViewController implements Initializable{
     @FXML
     private TableColumn<TrainBase, Integer> numberOfWagonsColumn;
 
+    @FXML
+    private Button deleteTrainBtn;
+
+    @FXML
+    private Button updateTrainBtn;
+
+    @FXML
+    private Button addTrainBtn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
@@ -52,5 +60,22 @@ public class TrainViewController implements Initializable{
         }
 
         trainTableView.refresh();
+    }
+
+    @FXML
+    private void onDeleteButtonClick(ActionEvent event) {
+        TrainBase selectedTrain = trainTableView.getSelectionModel().getSelectedItem();
+        if (selectedTrain != null) {
+            TrainDatabaseManager.deleteTrain(selectedTrain.getId());
+
+            trainTableView.getItems().remove(selectedTrain);
+        }
+        else {
+            Alert warningAlert = new Alert(Alert.AlertType.WARNING);
+            warningAlert.setTitle("No Selection");
+            warningAlert.setHeaderText(null);
+            warningAlert.setContentText("Please select a train to delete.");
+            warningAlert.showAndWait();
+        }
     }
 }

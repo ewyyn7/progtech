@@ -16,5 +16,8 @@
            </columns>
        </TableView>
       </VBox>
+      <Button fx:id="addTrainBtn" layoutX="37.0" layoutY="632.0" mnemonicParsing="false" text="Add Train" />
+      <Button fx:id="updateTrainBtn" layoutX="117.0" layoutY="632.0" mnemonicParsing="false" text="Update Train" />
+      <Button fx:id="deleteTrainBtn" layoutX="230.0" layoutY="632.0" mnemonicParsing="false" text="Delete Train" onAction="#onDeleteButtonClick"/>
    </children>
 </AnchorPane>

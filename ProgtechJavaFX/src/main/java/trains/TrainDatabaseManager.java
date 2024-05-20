@@ -129,4 +129,14 @@ public class TrainDatabaseManager {
 
         return trains;
     }
+
+    public static void deleteTrain(int trainId) {
+        try (Connection connection = ConnectToDB.connect();
+             PreparedStatement stmt = connection.prepareStatement("DELETE FROM trains WHERE id = ?")) {
+            stmt.setInt(1, trainId);
+            stmt.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
