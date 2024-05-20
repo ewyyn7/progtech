@@ -12,6 +12,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import trains.EquipDiningCar;
+import trains.EquipSnowplough;
 import trains.TrainBase;
 import trains.TrainDatabaseManager;
 
@@ -44,10 +46,13 @@ public class TrainViewController implements Initializable{
     private Button deleteTrainBtn;
 
     @FXML
-    private Button updateTrainBtn;
+    private Button addTrainBtn;
 
     @FXML
-    private Button addTrainBtn;
+    private Button equipDiningCarBtn;
+
+    @FXML
+    private Button equipSnowploughBtn;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -102,5 +107,51 @@ public class TrainViewController implements Initializable{
             } catch (IOException e) {
                 e.printStackTrace();
             }
+    }
+
+    @FXML
+    private void onEquipDiningCarButtonClick(ActionEvent event) {
+        TrainBase selectedTrain = trainTableView.getSelectionModel().getSelectedItem();
+        if (selectedTrain != null) {
+            TrainBase decoratedTrain = new EquipDiningCar(selectedTrain);
+            decoratedTrain.saveToDatabase();
+
+            loadTrainData();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Train Decorated");
+            alert.setHeaderText(null);
+            alert.setContentText("The selected train has been equipped with a dining car.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No Train Selected");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a train to equip with a dining car.");
+            alert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void onEquipSnowploughButtonClick(ActionEvent event) {
+        TrainBase selectedTrain = trainTableView.getSelectionModel().getSelectedItem();
+        if (selectedTrain != null) {
+            TrainBase decoratedTrain = new EquipSnowplough(selectedTrain);
+            decoratedTrain.saveToDatabase();
+
+            loadTrainData();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Train Decorated");
+            alert.setHeaderText(null);
+            alert.setContentText("The selected train has been equipped with a snowplough.");
+            alert.showAndWait();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("No Train Selected");
+            alert.setHeaderText(null);
+            alert.setContentText("Please select a train to equip with a snowplough.");
+            alert.showAndWait();
+        }
     }
 }

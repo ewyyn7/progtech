@@ -17,6 +17,8 @@
        </TableView>
       </VBox>
       <Button fx:id="addTrainBtn" layoutX="37.0" layoutY="632.0" mnemonicParsing="false" text="Add Train" onAction="#onAddButtonClick"/>
-      <Button fx:id="deleteTrainBtn" layoutX="230.0" layoutY="632.0" mnemonicParsing="false" text="Delete Train" onAction="#onDeleteButtonClick"/>
+      <Button fx:id="deleteTrainBtn" layoutX="187.0" layoutY="632.0" mnemonicParsing="false" text="Delete Train" onAction="#onDeleteButtonClick"/>
+       <Button fx:id="equipDiningCarBtn" layoutX="37.0" layoutY="700.0" mnemonicParsing="false" text="Equip Dining Car" onAction="#onEquipDiningCarButtonClick"/>
+       <Button fx:id="equipSnowploughBtn" layoutX="187.0" layoutY="700.0" mnemonicParsing="false" text="Equip Snowplough" onAction="#onEquipSnowploughButtonClick"/>
    </children>
 </AnchorPane>
