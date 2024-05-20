@@ -2,10 +2,9 @@ package trains;
 
 import databaseConnection.ConnectToDB;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class TrainDatabaseManager {
     public static void saveToDatabase(String model, int averageSpeed, int safetyLevel, int numberOfWagons){
@@ -85,5 +84,49 @@ public class TrainDatabaseManager {
             }
         }
         return null;
+    }
+
+    public static List<TrainBase> getAllTrains() {
+        List<TrainBase> trains = new ArrayList<>();
+        Connection connection = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        try {
+            connection = ConnectToDB.connect();
+
+            stmt = connection.createStatement();
+            rs = stmt.executeQuery("SELECT * FROM trains");
+
+            while (rs.next()) {
+                String trainType = rs.getString("model");
+                TrainBase train;
+                if (trainType.contains("Mixed")) {
+                    train = new MixedTrain();
+                } else if (trainType.contains("Shuttle")) {
+                    train = new ShuttleTrain();
+                } else if (trainType.contains("Mail")) {
+                    train = new MailTrain();
+                } else {
+                    train = null;
+                }
+                if (train != null) {
+                    train.loadFromDatabase(rs.getInt("id"));
+                    trains.add(train);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (connection != null) {
+                    connection.close();
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return trains;
     }
 }

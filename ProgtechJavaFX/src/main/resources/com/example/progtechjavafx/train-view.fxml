@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.TrainViewController">
+   <children>
+      <VBox layoutX="28.0" layoutY="14.0" prefHeight="600.0" prefWidth="1100.0">
+       <TableView fx:id="trainTableView" prefHeight="600.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml">
+           <columns>
+               <TableColumn fx:id="idColumn" text="ID" />
+               <TableColumn fx:id="modelColumn" text="Model" />
+               <TableColumn fx:id="averageSpeedColumn" text="Average Speed" />
+               <TableColumn fx:id="safetyLevelColumn" text="Safety Level" />
+               <TableColumn fx:id="numberOfWagonsColumn" text="Number of Wagons" />
+           </columns>
+       </TableView>
+      </VBox>
+   </children>
+</AnchorPane>
