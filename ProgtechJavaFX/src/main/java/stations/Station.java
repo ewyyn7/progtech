@@ -18,10 +18,16 @@ public class Station {
     private String name;
 
     // Constructors, getters, and setters
+
     public Station(int id, String name) {
-        this.id = id;
+        this.id=id;
         this.name = name;
     }
+    public Station(String name) {
+        this.name = name;
+    }
+
+
 
     public int getId() {
         return id;
