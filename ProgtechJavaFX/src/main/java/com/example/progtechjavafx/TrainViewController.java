@@ -54,6 +54,9 @@ public class TrainViewController implements Initializable{
     @FXML
     private Button equipSnowploughBtn;
 
+    @FXML
+    private Button openStationViewBtn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
@@ -152,6 +155,26 @@ public class TrainViewController implements Initializable{
             alert.setHeaderText(null);
             alert.setContentText("Please select a train to equip with a snowplough.");
             alert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void onOpenStationViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("station-view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openStationViewBtn.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Station View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

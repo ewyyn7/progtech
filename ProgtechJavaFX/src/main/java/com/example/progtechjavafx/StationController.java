@@ -37,6 +37,9 @@ public class StationController implements Initializable {
     @FXML
     private TableColumn<Station, String> nameColumn;
 
+    @FXML
+    private Button openTrainViewButton;
+
     public void initialize(URL location, ResourceBundle resources) {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
@@ -85,6 +88,26 @@ public class StationController implements Initializable {
             warningAlert.setHeaderText(null);
             warningAlert.setContentText("Please select a train to delete.");
             warningAlert.showAndWait();
+        }
+    }
+
+    @FXML
+    private void onOpenTrainViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("train-view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openTrainViewButton.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Train View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

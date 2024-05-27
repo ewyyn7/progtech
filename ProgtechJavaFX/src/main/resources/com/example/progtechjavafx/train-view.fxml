@@ -20,5 +20,6 @@
       <Button fx:id="deleteTrainBtn" layoutX="187.0" layoutY="632.0" mnemonicParsing="false" text="Delete Train" onAction="#onDeleteButtonClick"/>
        <Button fx:id="equipDiningCarBtn" layoutX="37.0" layoutY="700.0" mnemonicParsing="false" text="Equip Dining Car" onAction="#onEquipDiningCarButtonClick"/>
        <Button fx:id="equipSnowploughBtn" layoutX="187.0" layoutY="700.0" mnemonicParsing="false" text="Equip Snowplough" onAction="#onEquipSnowploughButtonClick"/>
+       <Button fx:id="openStationViewBtn" layoutX="300.0" layoutY="632.0" mnemonicParsing="false" text="Stations" onAction="#onOpenStationViewButtonClick"/>
    </children>
 </AnchorPane>
