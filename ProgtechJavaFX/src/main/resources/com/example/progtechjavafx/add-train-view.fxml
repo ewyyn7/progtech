@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import javafx.geometry.Insets?>
-<GridPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.progtechjavafx.AddTrainController" alignment="CENTER" hgap="10" vgap="10">
+<GridPane alignment="CENTER" hgap="10" prefHeight="105.0" prefWidth="177.0" style="-fx-background-color: #3b9441;" vgap="10" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.AddTrainController">
     <padding>
-        <Insets top="25" right="25" bottom="25" left="25"/>
+        <Insets bottom="25" left="25" right="25" top="25" />
     </padding>
 
-    <Label text="Train Model:"/>
-    <ComboBox fx:id="trainTypeComboBox" GridPane.columnIndex="1"/>
+    <Label text="Train Model:" />
+    <ComboBox fx:id="trainTypeComboBox" GridPane.columnIndex="1" />
 
-    <Button text="Add" onAction="#handleAddButtonAction" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+    <Button onAction="#handleAddButtonAction" text="Add" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

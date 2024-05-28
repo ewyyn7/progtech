@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.StationController">
+<AnchorPane prefHeight="385.0" prefWidth="600.0" style="-fx-background-color: #2f547d;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.StationController">
    <children>
       <TableView fx:id="stationTableView" layoutX="14.0" layoutY="14.0" prefHeight="312.0" prefWidth="573.0">
         <columns>
@@ -11,8 +11,8 @@
           <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
         </columns>
       </TableView>
-      <Button fx:id="addButton" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
-      <Button fx:id="deleteButton" layoutX="70.0" layoutY="337.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="delete" />
-      <Button fx:id="openTrainViewButton" layoutX="14.0" layoutY="437.0" mnemonicParsing="false" onAction="#onOpenTrainViewButtonClick" text="Trains" />
+      <Button fx:id="addButton" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#onAddButtonClick" style="-fx-background-color: #de821f;" text="Add." />
+      <Button fx:id="deleteButton" layoutX="70.0" layoutY="337.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" style="-fx-background-color: #de821f;" text="Delete." />
+      <Button fx:id="openTrainViewButton" layoutX="136.0" layoutY="337.0" mnemonicParsing="false" onAction="#onOpenTrainViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to trains." />
    </children>
 </AnchorPane>

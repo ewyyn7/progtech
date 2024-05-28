@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.TrainViewController">
+<AnchorPane prefHeight="712.0" prefWidth="1200.0" style="-fx-background-color: #2f547d;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.TrainViewController">
    <children>
       <VBox layoutX="28.0" layoutY="14.0" prefHeight="600.0" prefWidth="1100.0">
        <TableView fx:id="trainTableView" prefHeight="600.0" prefWidth="1100.0" xmlns:fx="http://javafx.com/fxml">
@@ -16,10 +16,10 @@
            </columns>
        </TableView>
       </VBox>
-      <Button fx:id="addTrainBtn" layoutX="37.0" layoutY="632.0" mnemonicParsing="false" text="Add Train" onAction="#onAddButtonClick"/>
-      <Button fx:id="deleteTrainBtn" layoutX="187.0" layoutY="632.0" mnemonicParsing="false" text="Delete Train" onAction="#onDeleteButtonClick"/>
-       <Button fx:id="equipDiningCarBtn" layoutX="37.0" layoutY="700.0" mnemonicParsing="false" text="Equip Dining Car" onAction="#onEquipDiningCarButtonClick"/>
-       <Button fx:id="equipSnowploughBtn" layoutX="187.0" layoutY="700.0" mnemonicParsing="false" text="Equip Snowplough" onAction="#onEquipSnowploughButtonClick"/>
-       <Button fx:id="openStationViewBtn" layoutX="300.0" layoutY="632.0" mnemonicParsing="false" text="Stations" onAction="#onOpenStationViewButtonClick"/>
+      <Button fx:id="addTrainBtn" layoutX="37.0" layoutY="632.0" mnemonicParsing="false" onAction="#onAddButtonClick" style="-fx-background-color: #de821f;" text="Add." />
+      <Button fx:id="deleteTrainBtn" layoutX="87.0" layoutY="632.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" style="-fx-background-color: #de821f;" text="Delete." />
+       <Button fx:id="equipDiningCarBtn" layoutX="37.0" layoutY="671.0" mnemonicParsing="false" onAction="#onEquipDiningCarButtonClick" text="Equip Dining Car" />
+       <Button fx:id="equipSnowploughBtn" layoutX="153.0" layoutY="671.0" mnemonicParsing="false" onAction="#onEquipSnowploughButtonClick" text="Equip Snowplough" />
+       <Button fx:id="openStationViewBtn" layoutX="151.0" layoutY="632.0" mnemonicParsing="false" onAction="#onOpenStationViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to stations." />
    </children>
 </AnchorPane>
