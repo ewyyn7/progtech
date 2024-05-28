@@ -9,8 +9,8 @@ public class Maintenance implements IObserver{
    }
 
     @Override
-    public void Update(double temperature, double condition_percentage, double rainfall_ammount, double seconds) {
-        System.out.println("Karbantartók értesítve!");
+    public String Update(double temperature, double rainfall_ammount) {
+        return ("Maintenance needed!");
 
     }
 }

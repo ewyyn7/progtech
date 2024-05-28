@@ -19,11 +19,7 @@ import train_lines.*;
 public class Tester {
     public static void main(String[] args) {
 
-        Line line = new Line("123");
-        line.RegisterObserver(new Maintenance("1"));
-        line.RegisterObserver(new Monitoring("2"));
 
-        line.Check();
 
         /*
         Connection connection = ConnectToDB.connect();

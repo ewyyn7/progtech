@@ -5,6 +5,6 @@ public interface ISubject {
 
     void RemoveObserver(IObserver observer);
 
-    void NotifyObservers();
+    String NotifyObservers();
 
 }

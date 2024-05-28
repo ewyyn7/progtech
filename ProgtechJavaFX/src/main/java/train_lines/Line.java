@@ -1,4 +1,9 @@
 package train_lines;
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
@@ -6,37 +11,73 @@ import java.util.jar.Manifest;
 
 public class Line implements ISubject, IDisplay{
 
+
+    public IntegerProperty idProperty() {
+        return new SimpleIntegerProperty(getId());
+    }
+    public IntegerProperty lengthProperty() {
+        return new SimpleIntegerProperty(getLength());
+    }
+    public IntegerProperty baseProperty() {
+        return new SimpleIntegerProperty(getBase_station_id());
+    }
+    public IntegerProperty finalProperty() {
+        return new SimpleIntegerProperty(getFinal_station_id());
+    }
+
     private List<IObserver> monitors = new ArrayList<>();
     private List<IObserver> maintenances = new ArrayList<>();
-    private String line_number;
+
 
     private Random random=new Random();
 
-    public Line(String line_number){
-        this.line_number=line_number;
+    private int length;
+    private int id;
+    private int base_station_id;
+    private int final_station_id;
+    public Line(int id, int length,int base_station_id, int final_station_id){
+        this.length=length;
+        this.id=id;
+        this.base_station_id=base_station_id;
+        this.final_station_id=final_station_id;
+    }
+    public int getId() {
+        return id;
+    }
+    public int getLength() {
+        return length;
+    }
+    public int getBase_station_id() {
+        return base_station_id;
+    }
+    public int getFinal_station_id() {
+        return final_station_id;
     }
 
-    public void Check(){
-        double temperature= random.nextDouble(15);
-        double condition_percentage=random.nextDouble(100);
-        double rainfall_ammount=random.nextDouble(10);
-        double seconds=random.nextDouble(10);
 
-        Display(temperature,condition_percentage,rainfall_ammount, seconds);
+
+    public String Check(){
+        double temperature= random.nextDouble(40);
+
+        double rainfall_ammount=random.nextDouble(10);
+
+
+
 
         for(IObserver monitor:monitors){
-            monitor.Update(temperature,condition_percentage,rainfall_ammount,seconds);
+            return monitor.Update(temperature,rainfall_ammount);
         }
 
-        if (temperature<5||condition_percentage<50||rainfall_ammount>5){
-            NotifyObservers();
+        if (temperature>30||rainfall_ammount>3){
+            return NotifyObservers();
         }
+        return "Temperature (C) : " + temperature + " Rainfall (mm) :" + rainfall_ammount;
 
     }
 
     @Override
-    public void Display(double temperature, double condition_percentage, double rainfall_ammount, double seconds) {
-        System.out.println("Hőfok (C)" + temperature + "Állapot (%)" + condition_percentage + " Csapadék (mm)" + rainfall_ammount + "Menetrendi menetidő (mp) "+ seconds);
+    public void Display(double temperature ,double rainfall_ammount) {
+        System.out.println("Hőfok (C)" + temperature +" Csapadék (mm)" + rainfall_ammount );
     }
 
     @Override
@@ -56,11 +97,12 @@ public class Line implements ISubject, IDisplay{
     }
 
     @Override
-    public void NotifyObservers() {
-        System.out.println("!");
+    public String NotifyObservers() {
+
         for (IObserver maintenance:maintenances){
-            maintenance.Update(0,0,0,0);
+            return maintenance.Update(0,0);
         }
+        return "Maintenance needed!";
 
 
     }

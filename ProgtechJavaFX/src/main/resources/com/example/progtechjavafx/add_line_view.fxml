@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.AddLineController">
+   <children>
+      <TextField fx:id="lengthField" layoutX="47.0" layoutY="40.0" promptText="Length" />
+      <TextField fx:id="baseField" layoutX="48.0" layoutY="87.0" promptText="Base" />
+      <TextField fx:id="finalField" layoutX="48.0" layoutY="130.0" promptText="Final" />
+      <Button fx:id="addButton" layoutX="47.0" layoutY="175.0" mnemonicParsing="false" onAction="#handleAddButtonAction" text="Button" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.LineController">
+   <children>
+      <TableView fx:id="lineTableView" layoutX="14.0" layoutY="14.0" prefHeight="325.0" prefWidth="567.0">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="lengthColumn" prefWidth="75.0" text="Length" />
+            <TableColumn fx:id="baseColumn" prefWidth="75.0" text="Base" />
+            <TableColumn fx:id="finalColumn" prefWidth="75.0" text="Final" />
+        </columns>
+      </TableView>
+      <Button fx:id="checkButton" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#onCheck" text="Check" />
+      <Button fx:id="addButton" layoutX="77.0" layoutY="350.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add" />
+      <Button fx:id="deleteButton" layoutX="127.0" layoutY="350.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete" />
+   </children>
+</AnchorPane>
