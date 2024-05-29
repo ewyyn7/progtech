@@ -6,8 +6,8 @@
 <AnchorPane prefHeight="142.0" prefWidth="193.0" style="-fx-background-color: #3b9441;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.AddLineController">
    <children>
       <TextField fx:id="lengthField" layoutX="22.0" layoutY="11.0" promptText="Length." />
-      <TextField fx:id="baseField" layoutX="22.0" layoutY="40.0" promptText="Base station." />
-      <TextField fx:id="finalField" layoutX="22.0" layoutY="69.0" promptText="Final station." />
+      <ComboBox fx:id="baseComboBox" layoutX="22.0" layoutY="40.0"/>
+      <ComboBox fx:id="finalComboBox" layoutX="22.0" layoutY="69.0"/>
       <Button fx:id="addButton" layoutX="77.0" layoutY="106.0" mnemonicParsing="false" onAction="#handleAddButtonAction" text="Add" />
    </children>
 </AnchorPane>

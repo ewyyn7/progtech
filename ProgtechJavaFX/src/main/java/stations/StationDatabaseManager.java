@@ -13,10 +13,9 @@ public class StationDatabaseManager {
 
 
         try { Connection conn = ConnectToDB.connect();
-            String sql = "INSERT INTO stations (id, name) VALUES (?, ?)";
+            String sql = "INSERT INTO stations (name) VALUES (?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setInt(1, station.getId()+1);
-            stmt.setString(2, station.getName());
+            stmt.setString(1, station.getName());
             stmt.executeUpdate();
             conn.close();
         } catch (SQLException e) {
