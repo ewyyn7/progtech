@@ -18,6 +18,7 @@ public class TrainDatabaseManager {
             statement.setInt(3, safetyLevel);
             statement.setInt(4, numberOfWagons);
             statement.executeUpdate();
+            System.out.println(model + " train added to DB.");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -44,6 +45,7 @@ public class TrainDatabaseManager {
             statement.setInt(4, numberOfWagons);
             statement.setInt(5, id);
             statement.executeUpdate();
+            System.out.println(id + " train updated to DB.");
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
@@ -135,6 +137,7 @@ public class TrainDatabaseManager {
              PreparedStatement stmt = connection.prepareStatement("DELETE FROM trains WHERE id = ?")) {
             stmt.setInt(1, trainId);
             stmt.executeUpdate();
+            System.out.println("Train with ID " + trainId + " successfully deleted.");
         } catch (SQLException e) {
             e.printStackTrace();
         }

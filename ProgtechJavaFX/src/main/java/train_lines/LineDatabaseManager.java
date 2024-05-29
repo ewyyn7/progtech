@@ -18,6 +18,7 @@ public class LineDatabaseManager {
             stmt.setInt(3, base_station_id);
             stmt.setInt(4, final_station_id);
             stmt.executeUpdate();
+            System.out.println(id + " line added to DB.");
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -84,6 +85,7 @@ public class LineDatabaseManager {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            System.out.println("Line with ID " + id + " successfully deleted.");
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();

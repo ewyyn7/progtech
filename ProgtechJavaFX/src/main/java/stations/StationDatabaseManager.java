@@ -17,6 +17,7 @@ public class StationDatabaseManager {
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1, station.getName());
             stmt.executeUpdate();
+            System.out.println(station.getName() + " station added to DB.");
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -89,6 +90,7 @@ public class StationDatabaseManager {
              PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
             stmt.executeUpdate();
+            System.out.println("Station with ID " + id + " successfully deleted.");
             conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
