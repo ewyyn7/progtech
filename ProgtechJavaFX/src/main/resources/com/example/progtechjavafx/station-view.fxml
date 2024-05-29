@@ -3,18 +3,18 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="385.0" prefWidth="600.0" style="-fx-background-color: #2f547d;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.StationController">
+<AnchorPane prefHeight="440.0" prefWidth="600.0" style="-fx-background-color: #2f547d;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.StationController">
    <children>
-      <TableView fx:id="stationTableView" layoutX="14.0" layoutY="14.0" prefHeight="312.0" prefWidth="573.0">
+      <TableView fx:id="stationTableView" layoutX="14.0" layoutY="14.0" prefHeight="325.0" prefWidth="567.0">
         <columns>
           <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
           <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
         </columns>
       </TableView>
-      <Button fx:id="addButton" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#onAddButtonClick" style="-fx-background-color: #de821f;" text="Add." />
-      <Button fx:id="deleteButton" layoutX="70.0" layoutY="337.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" style="-fx-background-color: #de821f;" text="Delete." />
-      <Button fx:id="openTrainViewButton" layoutX="136.0" layoutY="337.0" mnemonicParsing="false" onAction="#onOpenTrainViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to trains." />
-       <Button fx:id="openTrainLineViewBtn" layoutX="258.0" layoutY="337.0" mnemonicParsing="false" onAction="#onOpenTrainLineViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to lines." />
-       <Button fx:id="openScheduleViewBtn" layoutX="375.0" layoutY="337.0" mnemonicParsing="false" onAction="#onOpenScheduleViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to schedules." />
+      <Button fx:id="addButton" layoutX="14.0" layoutY="387.0" mnemonicParsing="false" onAction="#onAddButtonClick" text="Add." />
+      <Button fx:id="deleteButton" layoutX="64.0" layoutY="387.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" text="Delete." />
+      <Button fx:id="openTrainViewButton" layoutX="14.0" layoutY="350.0" mnemonicParsing="false" onAction="#onOpenTrainViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to trains." />
+       <Button fx:id="openTrainLineViewBtn" layoutX="140.0" layoutY="350.0" mnemonicParsing="false" onAction="#onOpenTrainLineViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to lines." />
+       <Button fx:id="openScheduleViewBtn" layoutX="259.0" layoutY="350.0" mnemonicParsing="false" onAction="#onOpenScheduleViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to schedules." />
    </children>
 </AnchorPane>
