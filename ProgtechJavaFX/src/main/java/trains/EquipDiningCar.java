@@ -18,6 +18,9 @@ public class EquipDiningCar extends TrainDecoratorBase {
 
     @Override
     public int GetAverageSpeed() {
+        if (super.GetAverageSpeed() <= 20) {
+            throw new NotValidSpeedException("Speed can't go under 0.");
+        }
         return super.GetAverageSpeed() - 20;
     }
 
