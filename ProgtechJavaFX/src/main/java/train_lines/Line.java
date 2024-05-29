@@ -57,7 +57,7 @@ public class Line implements ISubject, IDisplay{
 
 
     public String Check(){
-        double temperature= random.nextDouble(40);
+        double temperature= random.nextDouble(-20,40);
 
         double rainfall_ammount=random.nextDouble(10);
 
@@ -68,7 +68,7 @@ public class Line implements ISubject, IDisplay{
             return monitor.Update(temperature,rainfall_ammount);
         }
 
-        if (temperature>30||rainfall_ammount>3){
+        if (temperature>35||temperature<2||rainfall_ammount>3){
             return NotifyObservers();
         }
         return "Temperature (C) : " + temperature + " Rainfall (mm) :" + rainfall_ammount;

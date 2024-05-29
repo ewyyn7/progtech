@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.ScheduleController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2f547d;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.progtechjavafx.ScheduleController">
 
     <TableView fx:id="scheduleTableView" layoutX="14.0" layoutY="14.0" prefHeight="372.0" prefWidth="572.0">
         <columns>
@@ -18,6 +18,6 @@
     <Button fx:id="openTrainViewButton" layoutX="16.0" layoutY="405.0" mnemonicParsing="false" onAction="#onOpenTrainViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to trains." />
     <Button fx:id="openStationViewBtn" layoutX="135.0" layoutY="405.0" mnemonicParsing="false" onAction="#onOpenStationViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to stations." />
     <Button fx:id="openTrainLineViewBtn" layoutX="269.0" layoutY="405.0" mnemonicParsing="false" onAction="#onOpenTrainLineViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to lines." />
-    <Button fx:id="addButton" layoutX="14.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleAddButtonAction" text="Add" />
-    <Button fx:id="deleteButton" layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete" />
+    <Button fx:id="addButton" layoutX="14.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleAddButtonAction" text="Add." />
+    <Button fx:id="deleteButton" layoutX="70.0" layoutY="450.0" mnemonicParsing="false" onAction="#handleDeleteButtonAction" text="Delete." />
 </AnchorPane>
