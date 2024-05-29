@@ -10,6 +10,7 @@ public class Monitoring implements IObserver{
     @Override
     public String Update(double temperature,double rainfall_ammount) {
         if ((temperature > 30 && temperature < 35 )|| temperature < 5 && temperature > 2 || rainfall_ammount < 3){
+            System.out.println ("observer Monitoring alert.");
             return ("Alert, but no service needed! " + "Temperature (C) : " + temperature + " Rainfall (mm) :" + rainfall_ammount);
         }
         return "Temperature (C) : " + temperature + " Rainfall (mm) :" + rainfall_ammount;

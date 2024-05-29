@@ -69,7 +69,9 @@ public class Line implements ISubject, IDisplay{
         }
 
         if (temperature>35||temperature<2||rainfall_ammount>3){
+            System.out.println ("observer Maintenance alert.");
             return NotifyObservers();
+
         }
         return "Temperature (C) : " + temperature + " Rainfall (mm) :" + rainfall_ammount;
 
