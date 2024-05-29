@@ -43,6 +43,15 @@ public class LineController implements Initializable {
     @FXML
     private Button addButton;
 
+    @FXML
+    private Button openStationViewBtn;
+
+    @FXML
+    private Button openTrainViewBtn;
+
+    @FXML
+    private Button openScheduleViewBtn;
+
 
 
     public void initialize(URL location, ResourceBundle resources) {
@@ -122,4 +131,63 @@ public class LineController implements Initializable {
         }
     }
 
+    @FXML
+    private void onOpenTrainViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("train-view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openTrainViewBtn.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Train View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onOpenStationViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("station-view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openStationViewBtn.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Station View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onOpenScheduleViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("schedule-view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openScheduleViewBtn.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Schedule View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -40,6 +40,12 @@ public class StationController implements Initializable {
     @FXML
     private Button openTrainViewButton;
 
+    @FXML
+    private Button openTrainLineViewBtn;
+
+    @FXML
+    private Button openScheduleViewBtn;
+
     public void initialize(URL location, ResourceBundle resources) {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
         nameColumn.setCellValueFactory(cellData -> cellData.getValue().nameProperty());
@@ -101,6 +107,46 @@ public class StationController implements Initializable {
 
             Stage stationStage = new Stage();
             stationStage.setTitle("Train View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onOpenTrainLineViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("train_line_view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openTrainLineViewBtn.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Train Line View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onOpenScheduleViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("schedule-view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openScheduleViewBtn.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Schedule View");
             stationStage.setScene(new Scene(root));
 
             stationStage.show();

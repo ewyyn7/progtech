@@ -14,5 +14,7 @@
       <Button fx:id="addButton" layoutX="14.0" layoutY="337.0" mnemonicParsing="false" onAction="#onAddButtonClick" style="-fx-background-color: #de821f;" text="Add." />
       <Button fx:id="deleteButton" layoutX="70.0" layoutY="337.0" mnemonicParsing="false" onAction="#onDeleteButtonClick" style="-fx-background-color: #de821f;" text="Delete." />
       <Button fx:id="openTrainViewButton" layoutX="136.0" layoutY="337.0" mnemonicParsing="false" onAction="#onOpenTrainViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to trains." />
+       <Button fx:id="openTrainLineViewBtn" layoutX="258.0" layoutY="337.0" mnemonicParsing="false" onAction="#onOpenTrainLineViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to lines." />
+       <Button fx:id="openScheduleViewBtn" layoutX="375.0" layoutY="337.0" mnemonicParsing="false" onAction="#onOpenScheduleViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to schedules." />
    </children>
 </AnchorPane>
