@@ -60,6 +60,9 @@ public class TrainViewController implements Initializable{
     @FXML
     private Button openTrainLineViewBtn;
 
+    @FXML
+    private Button openScheduleViewBtn;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         idColumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asObject());
@@ -191,6 +194,26 @@ public class TrainViewController implements Initializable{
 
             Stage stationStage = new Stage();
             stationStage.setTitle("Station View");
+            stationStage.setScene(new Scene(root));
+
+            stationStage.show();
+
+            mainStage.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void onOpenScheduleViewButtonClick(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("schedule-view.fxml"));
+            Parent root = loader.load();
+
+            Stage mainStage = (Stage) openScheduleViewBtn.getScene().getWindow();
+
+            Stage stationStage = new Stage();
+            stationStage.setTitle("Schedule View");
             stationStage.setScene(new Scene(root));
 
             stationStage.show();

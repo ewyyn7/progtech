@@ -22,5 +22,6 @@
        <Button fx:id="equipSnowploughBtn" layoutX="153.0" layoutY="671.0" mnemonicParsing="false" onAction="#onEquipSnowploughButtonClick" text="Equip Snowplough" />
        <Button fx:id="openStationViewBtn" layoutX="151.0" layoutY="632.0" mnemonicParsing="false" onAction="#onOpenStationViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to stations." />
        <Button fx:id="openTrainLineViewBtn" layoutX="283.0" layoutY="632.0" mnemonicParsing="false" onAction="#onOpenTrainLineViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to lines." />
+       <Button fx:id="openScheduleViewBtn" layoutX="401.0" layoutY="632.0" mnemonicParsing="false" onAction="#onOpenScheduleViewButtonClick" style="-fx-background-color: #de821f;" text="Navigate to schedules." />
    </children>
 </AnchorPane>
