@@ -17,7 +17,6 @@ public class Station {
     private int id;
     private String name;
 
-    // Constructors, getters, and setters
 
     public Station(int id, String name) {
         this.id=id;

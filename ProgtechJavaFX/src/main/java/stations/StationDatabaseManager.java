@@ -89,7 +89,10 @@ public class StationDatabaseManager {
         try {Connection conn = ConnectToDB.connect();
              PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setInt(1, id);
-            stmt.executeUpdate();
+            int affected=stmt.executeUpdate();
+            if (affected == 0){
+                throw new ZeroLineException("No station found.");
+            }
             System.out.println("Station with ID " + id + " successfully deleted.");
             conn.close();
         } catch (SQLException e) {
